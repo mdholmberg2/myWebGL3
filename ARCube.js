@@ -6,6 +6,8 @@ var btn, gl, glCanvas, camera, scene, renderer, cube
 // global xr value
 var xrSession = null;
 
+loadScene();
+
 function main() {
     init();
 }
@@ -26,7 +28,7 @@ camera = new THREE.PerspectiveCamera(
 
     scene = new THREE.Scene();
 
-    var geometry = new THREE.BoxBufferGeometry(0.2, 0.2, 0.2);
+    var geometry = new THREE.CubeGeometry(1, 1, 1);
     var material = new THREE.MeshPhongMaterial({color: 0x89CFF0});
     cube = new THREE.Mesh( geometry, material);
     scene.add(cube);
@@ -40,9 +42,9 @@ camera = new THREE.PerspectiveCamera(
         context: gl
     })
 
-    renderer.setPixelRatio(window.devicePixelRatio);
+    //renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.xr.enabled = true;
+    //renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
 }
 
