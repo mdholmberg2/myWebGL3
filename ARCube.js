@@ -6,7 +6,7 @@ var btn, gl, glCanvas, camera, scene, renderer, cube
 // global xr value
 var xrSession = null;
 
-loadScene();
+
 
 function main() {
     init();
